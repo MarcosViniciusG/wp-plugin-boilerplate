@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Formulário com cronômetro
-Description: Um plugin feito para registrar os usuários interessados no que vai acontecer no final do cronômetro.
+Plugin Name: Cronômetro
+Description: Um plugin feito para mostrar um cronômetro até a data e hora definida pelo usuário
 */
 
 //Display de erros
@@ -41,5 +41,5 @@ function shortcode() {
     return $html_content;
 }
 
-// Registra o shortcode com o nome 'formulario-cronometro'
-add_shortcode('formulario-cronometro', 'shortcode');
+// Registra o shortcode com o nome 'cronometro'
+add_shortcode('cronometro', 'shortcode');

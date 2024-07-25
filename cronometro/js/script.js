@@ -33,6 +33,7 @@ function cronometro() {
     }, 1000);
 }
 
+// Ativa a função quando todos os elementos HTML forem carregados
 window.onload = function() {
     mudarCor();
     cronometro();
