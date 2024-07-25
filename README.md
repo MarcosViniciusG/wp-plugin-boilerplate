@@ -1,5 +1,5 @@
 # wp-plugin-boilerplate
-Um boilerplate para auxiliar no aprendizado de desenvolvimento de plugins para WordPress.
+Um boilerplate para auxiliar no aprendizado de desenvolvimento de plugins para WordPress. Parte do projeto LGBTQIAPN+ Connect: https://github.com/ResidenciaTICBrisa/T2G8-Plugin-Wordpress/tree/developer.
 
 ## Passo-a-Passo para chegar na branch "finalizado"
 ### Passo 1
@@ -8,7 +8,8 @@ https://residenciaticbrisa.github.io/T2G8-Plugin-Wordpress/#/preparandoambiente
 
 ### Passo 2
 Vamos definir a estrutura das nossas pastas e arquivos. Alguns já estão criados, então vamos finalizar o restante para que fique assim: <br>
-![alt text](image-1.png)
+![alt text](estrutura.png)
+<br>
 
 ### Passo 3
 Em sequência, vamos definir o cabeçalho do nosso plugin. Lá estará as informações essenciais sobre nosso plugin como nome, versão, autores, descrição, etc. Para uma lista completa de campos disponíveis acesse a página oficial de desenvolvimento de plugins para WordPress: 
@@ -21,14 +22,14 @@ O nosso cabeçalho: <br>
 
 /*
 Plugin Name: Cronômetro
-Description: Um plugin feito para mostrar um cronômetro até a data e hora definida pelo usuário
+Description: Um plugin feito para mostrar um cronômetro até 2030
 */
 ```
 
 ### Passo 4 
 Ativaremos o display de erros para facilitar quando tivermos que debugar: <br>
 ```php
-//formulario-cronometro.php
+//cronometro.php
 
 //Display de erros
 ini_set('display_errors', 1);
@@ -51,10 +52,9 @@ window.onload = function() {
     mudarCor();
 }
 ```
-
 Logo após, vamos fazer com que nosso PHP carregue esse script em todas as páginas do site WordPress e, para isso, vamos criar uma função que carregue nosso script: <br>
 ```php
-//formulario-cronometro.php
+//cronometro.php
 
 // Função para carregar os scripts
 function carregar_scripts() {
@@ -63,7 +63,7 @@ function carregar_scripts() {
 ```
 e agora vamos fazer que esse script carregue em todas as páginas através de um gancho do WP: <br>
 ```php
-//formulario-cronometro.php
+//cronometro.php
 
 // Gancho para inicializar o script em todas as páginas
 add_action('wp_enqueue_scripts', 'carregar_scripts');
@@ -127,7 +127,7 @@ Agora, iremos centralizar o texto em nosso arquivo css: <br>
 ```
 Por fim, vamos carregar todos esses arquivos no PHP usando shortcode, para o usuário do plugin poder decidir onde ele quer que o cronômetro fique em seu site. Para isso, vamos remover o gancho que carrega o script em todas as páginas implementado no passo 5: <br>
 ```php
-//formulario-cronometro.php
+//cronometro.php
 
 - // Gancho para inicializar o script em todas as páginas
 - add_action('wp_enqueue_scripts', 'carregar_scripts');
@@ -164,4 +164,19 @@ function shortcode() {
 // Registra o shortcode com o nome 'cronometro'
 add_shortcode('cronometro', 'shortcode');
 ```
-Para o usuário implementar
+Para o usuário implementar o cronômetro no site dele, basta escrever em qualquer página do site dele [cronometro].
+<br>
+![alt text](shortcode.png)
+<br>
+Pronto! Agora você aprendeu como o desenvolvimento de plugins para WP funciona, mas ainda há muito a aprender. Para um guia oficial, acesse: https://developer.wordpress.org/plugins/
+<br>
+Resultado final:
+<br>
+![alt text](resultado.png)
+</br>
+
+### Passo 7
+Agora, para instalar esse plugin em outro site WP, só precisamos zipar a pasta do nosso plugin e ela estará pronta pra instalação em qualquer outro site WP.
+<br>
+![alt text](zipado.png)
+</br>

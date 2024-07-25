@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Cronômetro
-Description: Um plugin feito para mostrar um cronômetro até a data e hora definida pelo usuário
+Description: Um plugin feito para mostrar um cronômetro até 2030
 */
 
 //Display de erros
