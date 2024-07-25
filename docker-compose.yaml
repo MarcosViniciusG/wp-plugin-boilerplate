@@ -16,7 +16,7 @@ services:
     networks:
       - myNetwork
     volumes:
-      - ./plugin-prototipo:/var/www/html/wp-content/plugins/plugin-prototipo
+      - ./formulario-cronometro:/var/www/html/wp-content/plugins/formulario-cronometro
 
   db:
     image: mysql:8.3.0
