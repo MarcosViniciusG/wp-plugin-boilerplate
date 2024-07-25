@@ -1,4 +1,8 @@
-# wp-plugin-boilerplate
+<p align="center">
+  <img src=./logo.png width="190" />
+</p>
+
+# WP-PLUGIN-BOILERPLATE
 Um boilerplate para auxiliar no aprendizado de desenvolvimento de plugins para WordPress. Parte do projeto LGBTQIAPN+ Connect: https://github.com/ResidenciaTICBrisa/T2G8-Plugin-Wordpress/tree/developer.
 
 ## Passo-a-Passo para chegar na branch "finalizado"
